@@ -29,6 +29,9 @@ export class GameComponent implements OnInit {
       this.currendCard = this.game.stack.pop();   // pop() gibts den letzten eintrag im Array raus
       this.pickCardAnimation = true;
 
+      this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
       setTimeout(() => {  // Animation zurücksetzen, damit es bei jedem Karten aufdecken funktioniert
         this.game.playedCards.push(this.currendCard);
         this.pickCardAnimation = false;
@@ -38,10 +41,13 @@ export class GameComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
-  
+
 
     dialogRef.afterClosed().subscribe((name: string) => {
-      this.game.players.push(name);
+      if (name && name.length > 0) {
+        this.game.players.push(name);
+      }
+
     });
   }
 
