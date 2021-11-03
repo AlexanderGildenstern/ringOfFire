@@ -3,6 +3,8 @@ export class Game {     // alle eigenschaften vom Spiel in einer Datei
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
+    public pickCardAnimation = false;
+    public currendCard: string = '';
 
     constructor() {
         for (let i = 1; i < 14; i++) {
@@ -13,6 +15,18 @@ export class Game {     // alle eigenschaften vom Spiel in einer Datei
         }
         shuffle(this.stack);
     }
+    // ein JSON erstellen für firestore
+    public toJson() {
+        return {
+            players: this.players,
+            stack: this.stack,
+            playedCards: this.playedCards,
+            currentPlayer: this.currentPlayer,
+            pickCardAnimation: this.pickCardAnimation,
+            currendCard: this.currendCard
+        };
+    }
+
 }
 
 function shuffle(array: any[]) {    // any steht für jeden typ. // Sortiert das Kartendeck
