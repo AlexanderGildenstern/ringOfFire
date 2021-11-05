@@ -1,5 +1,6 @@
 export class Game {     // alle eigenschaften vom Spiel in einer Datei
     public players: string[] = [];    // genauer validiert. string[].( genauerere definition )
+    public player_images: string[] = [];    // genauer validiert. string[].( genauerere definition )
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
@@ -19,6 +20,7 @@ export class Game {     // alle eigenschaften vom Spiel in einer Datei
     public toJson() {
         return {
             players: this.players,
+            player_images: this.player_images,
             stack: this.stack,
             playedCards: this.playedCards,
             currentPlayer: this.currentPlayer,

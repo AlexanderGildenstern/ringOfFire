@@ -10,6 +10,9 @@
     img{
         height: 100vh;
     }
+    @media only screen and (max-width: 960px){
+        overflow: hidden;
+    }
 }
 .start-label-box{
     position: absolute;
@@ -23,9 +26,14 @@
         width: 40vw;
         height: auto;
 
+        @media only screen and (max-width: 960px){
+            width: 300px;
+        }
+
         &:hover{
             filter: brightness(1.25);
             cursor: pointer;
         }
     }
 }
+
