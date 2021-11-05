@@ -71,6 +71,7 @@ export class GameComponent implements OnInit {
 
       this.game.currentPlayer++;
       this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
       this.saveGame();
 
       setTimeout(() => {  // Animation zurücksetzen, damit es bei jedem Karten aufdecken funktioniert

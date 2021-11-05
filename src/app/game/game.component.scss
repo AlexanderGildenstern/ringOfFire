@@ -103,3 +103,10 @@ app-player {
         width: 300px;
     }
 }
+.preloadImage{
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    z-index: -999;
+    position: absolute;
+}
